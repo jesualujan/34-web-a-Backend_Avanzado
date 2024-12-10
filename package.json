@@ -2,8 +2,11 @@
   "name": "34-web-a-backend_avanzado",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "serve": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "standard --fix"
   },
   "keywords": [],
   "author": "",
@@ -11,8 +14,13 @@
   "description": "Crud Application for nodejs using mongoDB",
   "dependencies": {
     "colors": "^1.4.0",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.8.4",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
   }
 }
