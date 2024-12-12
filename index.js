@@ -90,6 +90,20 @@ app.put("/products/:id", async (req, res) => {
   }
 });
 
+///  para eliminar datos de la base de datos por id
+app.delete("/products/:id", async (req, res) => {
+  try {
+    const product = await Product.findByIdAndDelete(req.params.id);
+    if (!product) {
+      res.status(404).send("Product not found");
+    }
+    res.status(200).send(product);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send(error.message);
+  }
+});
+
 app.get("/products", (req, res) => {
   res.send({
     message: "Hola mundo desde express",
